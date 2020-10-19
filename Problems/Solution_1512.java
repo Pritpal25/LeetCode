@@ -1,4 +1,9 @@
-class Solution {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Solution_1521 {
     public int numIdenticalPairs(int[] nums) {
         Map<Integer, List<Integer>> index = new HashMap<>();
         

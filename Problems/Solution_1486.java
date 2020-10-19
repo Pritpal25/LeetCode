@@ -1,4 +1,4 @@
-class Solution {
+class Solution_1468 {
     public int xorOperation(int n, int start) {
         int res = 0;
         

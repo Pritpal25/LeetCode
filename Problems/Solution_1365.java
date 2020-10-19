@@ -1,4 +1,5 @@
-class Solution {
+class Solution_1365
+{
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] count = new int[101];
         

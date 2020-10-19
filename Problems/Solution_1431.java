@@ -1,4 +1,8 @@
-class Solution {
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution_1431
+{
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         int largest = 0;
         
