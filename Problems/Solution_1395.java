@@ -1,7 +1,3 @@
-/* Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved. */
-
-package DailyChallenge;
-
 public class Solution_1395
 {
     public int numTeams(int[] rating) {
