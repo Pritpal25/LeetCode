@@ -1,3 +1,5 @@
+package DailyChallenge.October2020;
+
 class Solution {
     public int search(int[] nums, int target) {
         return binary(nums, 0, nums.length-1, target);

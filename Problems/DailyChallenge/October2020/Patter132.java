@@ -1,4 +1,4 @@
-package DailyChallenge;
+package DailyChallenge.October2020;
 
 import java.util.ArrayList;
 import java.util.List;

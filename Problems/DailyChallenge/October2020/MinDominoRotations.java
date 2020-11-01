@@ -1,4 +1,4 @@
-package DailyChallenge;
+package DailyChallenge.October2020;
 
 class MinDominoRotations {
     public int minDominoRotations(int[] A, int[] B) {
