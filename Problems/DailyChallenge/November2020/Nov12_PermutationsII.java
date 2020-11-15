@@ -7,28 +7,32 @@ import java.util.Set;
 
 public class Nov12_PermutationsII
 {
-    static Set<List<Integer>> uniqueLists = new HashSet<>();
-
+    static List<List<Integer>> ans = new ArrayList<>();
     public static List<List<Integer>> permuteUnique(int[] nums) {
         permute(nums, 0);
-
-        List<List<Integer>> ans = new ArrayList<>();
-
-        for(List<Integer> list : uniqueLists) {
-            ans.add(list);
-        }
 
         return ans;
     }
 
     private static void permute(int[] nums, int l) {
         if (l == nums.length) {
-            uniqueLists.add(arrToList(nums));
+            ans.add(arrToList(nums));
         } else {
+            // At each position while constructing the permutation, make sure that no 2 same
+            // elements are used. Earlier I was using a boolean to check that, but that made
+            // an inherent assumption that the array would always remain sorted. That hoever is
+            // not true.
+            // Eg : 0, 0, 0, 1, 9 : this changes to 9, 0, 0, 1, 0 after first swap and from 2nd
+            // element onwards the array isnt sorted.
+            // Therefore change the approach to use a set and no need of sorting at all.
+            Set<Integer> used = new HashSet<>();
             for(int i = l; i < nums.length; i++) {
-                swap(nums, l, i);
-                permute(nums, l+1);
-                swap(nums, l, i);
+                if(!used.contains(nums[i])) {
+                    used.add(nums[i]);
+                    swap(nums, l, i);
+                    permute(nums, l+1);
+                    swap(nums, l, i);
+                }
             }
         }
     }
@@ -49,9 +53,10 @@ public class Nov12_PermutationsII
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{1,1,2};
+        int[] nums = new int[]{1, 2, 2, 3};
         List<List<Integer>> ans = permuteUnique(nums);
 
+        System.out.println(ans.size());
         for(List<Integer> list : ans) {
             list.stream().forEach(a -> System.out.print(a + " "));
             System.out.println();
