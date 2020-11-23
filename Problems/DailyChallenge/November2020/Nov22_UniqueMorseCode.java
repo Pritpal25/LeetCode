@@ -3,7 +3,7 @@ package DailyChallenge.November2020;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Nov23_UniqueMorseCode
+public class Nov22_UniqueMorseCode
 {
     public int uniqueMorseRepresentations(String[] words) {
         String[] dict = new String[]{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
